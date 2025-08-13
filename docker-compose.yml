@@ -15,8 +15,8 @@ services:
   mysql:
     image: mysql:8.0
     environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: rcbdb
     ports:
       - "3306:3306"
     volumes:
@@ -24,7 +24,7 @@ services:
 
   frontend:
     build:
-      context: ./my-app
+      context: ./frontend
       dockerfile: ../Dockerfile
     ports:
       - "8080:80"
