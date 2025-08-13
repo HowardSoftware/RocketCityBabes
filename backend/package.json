@@ -1,0 +1,16 @@
+{
+  "name": "rocketcitybabes",
+  "version": "1.0.0",
+  "description": "This is a website for RocketCityBabes Bach and Banners.",
+  "main": "index.js",
+  "scripts": {
+    "runbackend": "node index.js"
+  },
+  "author": "HowardSoftware",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^4.18.2",
+    "mysql2": "^3.6.0"
+  }
+}
