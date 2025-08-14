@@ -3,6 +3,7 @@ This is a website for my wifes company rocketcitybabes.
  ## Installation
 Install [Docker Desktop](https://www.docker.com/products/docker-desktop/)  
 Install [NodeJS](https://nodejs.org/en)  
+Install [Vite](https://vite.dev/guide/)
 
 ## Setup and Running
 Clone the repository.
