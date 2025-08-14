@@ -1,0 +1,38 @@
+version: "3.9"
+
+services:
+  node-backend:
+    build:
+      context: ./backend
+    ports:
+      - "3000:3000"
+    env_file:
+      - backend/.env
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: rcbdb
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: ../Dockerfile.dev
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/frontend
+      - /frontend/node_modules
+    environment:
+      NODE_OPTIONS: "--max-old-space-size=4096"
+    command: npm run dev -- --host
+
+volumes:
+  mysql-data:
